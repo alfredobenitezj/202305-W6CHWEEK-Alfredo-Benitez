@@ -1,0 +1,39 @@
+[
+  {
+    "Id": "01",
+    "PirateName": "MonkeyDLuffy",
+    "Ship": "Twousand Sunny",
+    "Hability": "Gomu gomu no"
+  },
+
+  {
+    "Id": "02",
+    "PirateName": "Roronoa Zoro ",
+    "Ship": "Twousand Sunny",
+    "Hability": "santōryū"
+  },
+  {
+    "Id": "03",
+    "PirateName": "Nami ",
+    "Ship": "Twousand Sunny",
+    "Hability": "Navigation and wheather"
+  },
+  {
+    "Id": "04",
+    "PirateName": "Ussop ",
+    "Ship": "Twousand Sunny",
+    "Hability": "Hakki Vission and fire from a distance"
+  },
+  {
+    "Id": "05",
+    "PirateName": "Robin",
+    "Ship": "Twousand Sunny",
+    "Hability": "multiplication of parts of his body"
+  },
+  {
+    "Id": "06",
+    "PirateName": "Sanji",
+    "Ship": "Twousand Sunny",
+    "Hability": "Cook hability and fighter"
+  }
+]
