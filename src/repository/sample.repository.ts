@@ -15,4 +15,9 @@ export class SampleRepo {
   constructor() {
     debug('Sample Repo');
   }
+
+  async readAll() {
+    const stringData = await fs.readFile(file, { encoding: 'utf-8' });
+    return JSON.parse(stringData) as Pirate[];
+  }
 }
