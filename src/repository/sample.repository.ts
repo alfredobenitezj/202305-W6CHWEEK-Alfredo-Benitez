@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import createDebug from 'debug';
-const debug = createDebug('W6:SampleRepo');
+const debug = createDebug('W6AlfredoB:SampleRepo');
 
 type Pirate = {
   id: string;
@@ -13,7 +13,7 @@ const file = 'data.json';
 
 export class SampleRepo {
   constructor() {
-    debug('Sample Repo');
+    debug('Sample Repo Alfredo B');
   }
 
   async readAll() {
