@@ -17,8 +17,15 @@ app.use(express.json());
 app.use((_req, _res, next) => {
   next();
 });
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
   res.send('Bienvenido express');
 });
+app.post('/', (_req, res) => {
+  res.json('Unido nuevo pirata');
+});
+app.delete('/', (_req, res) => {
+  res.json('Ha abandonado el grupo');
+});
+app.path('/:id', (req, res) => {});
 
 app.use('/sample', sampleRouter);
