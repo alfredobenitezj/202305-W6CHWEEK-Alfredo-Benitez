@@ -14,7 +14,7 @@ const corsOptions = {
 app.use(morgan('dev'));
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use((req, res, next) => {
+app.use((_req, _res, next) => {
   next();
 });
 app.get('/', (req, res) => {
