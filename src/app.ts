@@ -26,6 +26,6 @@ app.post('/', (_req, res) => {
 app.delete('/', (_req, res) => {
   res.json('Ha abandonado el grupo');
 });
-app.path('/:id', (req, res) => {});
+app.patch('/:id', (req, res) => {});
 
 app.use('/sample', sampleRouter);
