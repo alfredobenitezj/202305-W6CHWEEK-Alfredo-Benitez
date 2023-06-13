@@ -1,33 +1,54 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { SampleRepo } from '../repository/sample.repository';
 import createDebug from 'debug';
 const debug = createDebug('W6:Sample Controller Alfredo Benitez ');
 
 export class SampleController {
-  repo: SampleRepo;
-  constructor() {
-    this.repo = new SampleRepo();
+  constructor(private repo: SampleRepo) {
     debug('Instanciado Sample Controller');
     debug(this.repo);
   }
 
-  async getAll(req: Request, res: Response) {
-    res.send(await this.repo.readAll());
+  async getAll(req: Request, res: Response, next: NextFunction) {
+    try {
+      res.send(await this.repo.query());
+    } catch (error) {
+      next(error);
+    }
   }
 
-  getById(req: Request, res: Response) {
-    res.send('Ey numero:' + req.params.id);
+  async getById(req: Request, res: Response, next: NextFunction) {
+    try {
+      res.send((await this.repo.queryById) + req.params.id);
+    } catch (error) {
+      next(error);
+    }
   }
 
-  post(req: Request, res: Response) {
-    res.send('Envio sencillo:' + req.body.Pirate);
+  async post(req: Request, res: Response, next: NextFunction) {
+    try {
+      res.status(201);
+      res.send(await this.repo.create(req.body));
+    } catch (error) {
+      next(error);
+    }
   }
 
-  patch(req: Request, res: Response) {
-    res.send('Patch Sample:' + req.body.Pirate);
+  async patch(req: Request, res: Response, next: NextFunction) {
+    try {
+      res.status(202);
+      res.send(await this.repo.update(req.params.id, req.body));
+    } catch (error) {
+      next(error);
+    }
   }
 
-  deleteByID(req: Request, res: Response) {
-    res.send('Borrado: ' + req.body.Pirate);
+  async deleteById(req: Request, res: Response, next: NextFunction) {
+    try {
+      res.status(204);
+      res.send(await this.repo.delete(req.params.id));
+    } catch (error) {
+      next(error);
+    }
   }
 }
